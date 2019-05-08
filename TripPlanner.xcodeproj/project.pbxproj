@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB2CBF292282985C00FDB64A /* WayPointCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2CBF282282985C00FDB64A /* WayPointCell.swift */; };
+		AB2CBF2B2282989400FDB64A /* TripVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2CBF2A2282989400FDB64A /* TripVC.swift */; };
+		AB2CBF2D22829D3600FDB64A /* WaypointVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2CBF2C22829D3600FDB64A /* WaypointVC.swift */; };
 		ABAFD6A72281F119005C4E7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAFD6A62281F119005C4E7A /* AppDelegate.swift */; };
 		ABAFD6A92281F119005C4E7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAFD6A82281F119005C4E7A /* ViewController.swift */; };
 		ABAFD6AC2281F119005C4E7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABAFD6AA2281F119005C4E7A /* Main.storyboard */; };
@@ -36,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB2CBF282282985C00FDB64A /* WayPointCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WayPointCell.swift; sourceTree = "<group>"; };
+		AB2CBF2A2282989400FDB64A /* TripVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripVC.swift; sourceTree = "<group>"; };
+		AB2CBF2C22829D3600FDB64A /* WaypointVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaypointVC.swift; sourceTree = "<group>"; };
 		ABAFD6A32281F119005C4E7A /* TripPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABAFD6A62281F119005C4E7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABAFD6A82281F119005C4E7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,7 +88,6 @@
 			isa = PBXGroup;
 			children = (
 				ABAFD6A52281F119005C4E7A /* TripPlanner */,
-				ABAFD6BA2281F11B005C4E7A /* TripPlannerTests */,
 				ABAFD6C52281F11B005C4E7A /* TripPlannerUITests */,
 				ABAFD6A42281F119005C4E7A /* Products */,
 			);
@@ -102,9 +107,13 @@
 			isa = PBXGroup;
 			children = (
 				ABAFD6D42281F179005C4E7A /* TripCell.swift */,
+				AB2CBF282282985C00FDB64A /* WayPointCell.swift */,
 				ABAFD6A62281F119005C4E7A /* AppDelegate.swift */,
 				ABAFD6A82281F119005C4E7A /* ViewController.swift */,
 				ABAFD6D62281FA58005C4E7A /* CreateTrip.swift */,
+				AB2CBF2A2282989400FDB64A /* TripVC.swift */,
+				AB2CBF2C22829D3600FDB64A /* WaypointVC.swift */,
+				ABAFD6BA2281F11B005C4E7A /* TripPlannerTests */,
 				ABAFD6AA2281F119005C4E7A /* Main.storyboard */,
 				ABAFD6AD2281F11A005C4E7A /* Assets.xcassets */,
 				ABAFD6AF2281F11A005C4E7A /* LaunchScreen.storyboard */,
@@ -264,6 +273,9 @@
 			files = (
 				ABAFD6A92281F119005C4E7A /* ViewController.swift in Sources */,
 				ABAFD6D52281F179005C4E7A /* TripCell.swift in Sources */,
+				AB2CBF292282985C00FDB64A /* WayPointCell.swift in Sources */,
+				AB2CBF2B2282989400FDB64A /* TripVC.swift in Sources */,
+				AB2CBF2D22829D3600FDB64A /* WaypointVC.swift in Sources */,
 				ABAFD6D72281FA58005C4E7A /* CreateTrip.swift in Sources */,
 				ABAFD6A72281F119005C4E7A /* AppDelegate.swift in Sources */,
 			);
