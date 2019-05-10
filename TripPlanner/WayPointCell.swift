@@ -10,15 +10,14 @@ import Foundation
 import UIKit
 
 class WayPointCell: UITableViewCell{
-    
     var nameOfWP = UILabel()
     override func layoutSubviews() {
         
         
-        nameOfWP.frame = CGRect(x: 15, y: 10, width: frame.width - 30, height: 50)
+        nameOfWP.frame = CGRect(x: 15, y: 2.5, width: frame.width - 30, height: 30)
         nameOfWP.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         
-        nameOfWP.font = UIFont(name: "AvenirNext-BoldItalic", size: 25)
+        nameOfWP.font = UIFont(name: "AvenirNext-Regular", size: 25)
         
         self.addSubview(nameOfWP)
     }

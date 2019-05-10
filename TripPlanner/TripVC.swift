@@ -76,7 +76,7 @@ class TripVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     @objc func addWP()
     {
         print("add trip pressed")
-        //self.present(CreateTrip(), animated: true, completion: nil)
+        self.present(WaypointVC(), animated: true, completion: nil)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1

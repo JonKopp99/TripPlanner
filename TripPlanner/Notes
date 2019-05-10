@@ -1,0 +1,10 @@
+Core data structure =
+trip = [
+name: String
+waypoints: [waypoints]
+]
+
+waypoints[
+item: MKMapitem
+
+]
