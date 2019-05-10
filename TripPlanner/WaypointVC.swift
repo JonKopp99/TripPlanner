@@ -7,6 +7,7 @@
 
 import UIKit
 import MapKit
+import CoreData
 
 class WaypointVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, MKMapViewDelegate{
     
@@ -15,6 +16,9 @@ class WaypointVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     var mapView = MKMapView()
     var matchingItems:[MKMapItem] = []
     var wView = UIView()
+    var selectedWP = MKMapItem()
+    var theTrip = Trip()
+    var store = CoreDataStack()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -143,7 +147,17 @@ class WaypointVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     {
         print("add trip pressed")
 //        wView.removeFromSuperview()
-//        self.view.addSubview(tableView)
+////        self.view.addSubview(tableView)
+//        var prevWP = theTrip.waypoints
+//        let tripName = theTrip.tripname
+//        prevWP?.append(selectedWP)
+//        let viewContext = store.persistentContainer.viewContext
+//        let newTrip = NSEntityDescription.insertNewObject(forEntityName: "Trip", into: viewContext) as! Trip
+//        newTrip.tripname = tripName
+//        newTrip.waypoints = prevWP
+//        viewContext.delete(theTrip)
+        theTrip.addWP(mapItem: selectedWP)
+        store.saveContext()
         self.dismiss(animated: true, completion: nil)
         
     }
@@ -158,6 +172,7 @@ class WaypointVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = self.matchingItems[indexPath.row]
+        self.selectedWP = item
         let placeMark = item.placemark
         dropPinZoomIn(placemark: placeMark)
         selectedWPView(place: item)
@@ -167,6 +182,7 @@ class WaypointVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         let cell = WayPointCell()
         //cell.nameOfWP.text = "Vantaggio"
         cell.nameOfWP.text = self.matchingItems[indexPath.row].name
+        
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -5,6 +5,11 @@ waypoints: [waypoints]
 ]
 
 waypoints[
-item: MKMapitem
+name: String
+xLocation: String
+yLocatin: String
 
 ]
+
+
+Coredata needs to only be laoded once throughout the entire class

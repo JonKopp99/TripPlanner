@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB125273228547C5002463F5 /* Trip+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB125271228547C5002463F5 /* Trip+CoreDataClass.swift */; };
+		AB125274228547C5002463F5 /* Trip+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB125272228547C5002463F5 /* Trip+CoreDataProperties.swift */; };
+		AB12527622854852002463F5 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12527522854852002463F5 /* CoreDataStack.swift */; };
 		AB2CBF292282985C00FDB64A /* WayPointCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2CBF282282985C00FDB64A /* WayPointCell.swift */; };
 		AB2CBF2B2282989400FDB64A /* TripVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2CBF2A2282989400FDB64A /* TripVC.swift */; };
 		AB2CBF2D22829D3600FDB64A /* WaypointVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2CBF2C22829D3600FDB64A /* WaypointVC.swift */; };
@@ -20,6 +23,8 @@
 		ABAFD6D52281F179005C4E7A /* TripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAFD6D42281F179005C4E7A /* TripCell.swift */; };
 		ABAFD6D72281FA58005C4E7A /* CreateTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAFD6D62281FA58005C4E7A /* CreateTrip.swift */; };
 		ABB127652284A3D600FC9E07 /* Notes in Resources */ = {isa = PBXBuildFile; fileRef = ABB127642284A3D600FC9E07 /* Notes */; };
+		ABB1276722853CC000FC9E07 /* mapItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1276622853CC000FC9E07 /* mapItem.swift */; };
+		ABB1276A22853F6D00FC9E07 /* TripItem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ABB1276822853F6D00FC9E07 /* TripItem.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +45,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB125271228547C5002463F5 /* Trip+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trip+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AB125272228547C5002463F5 /* Trip+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trip+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AB12527522854852002463F5 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		AB2CBF282282985C00FDB64A /* WayPointCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WayPointCell.swift; sourceTree = "<group>"; };
 		AB2CBF2A2282989400FDB64A /* TripVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripVC.swift; sourceTree = "<group>"; };
 		AB2CBF2C22829D3600FDB64A /* WaypointVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaypointVC.swift; sourceTree = "<group>"; };
@@ -59,6 +67,8 @@
 		ABAFD6D42281F179005C4E7A /* TripCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCell.swift; sourceTree = "<group>"; };
 		ABAFD6D62281FA58005C4E7A /* CreateTrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTrip.swift; sourceTree = "<group>"; };
 		ABB127642284A3D600FC9E07 /* Notes */ = {isa = PBXFileReference; lastKnownFileType = text; path = Notes; sourceTree = "<group>"; };
+		ABB1276622853CC000FC9E07 /* mapItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapItem.swift; sourceTree = "<group>"; };
+		ABB1276922853F6D00FC9E07 /* TripItem.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TripItem.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +96,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB12526C22854675002463F5 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				ABB1276622853CC000FC9E07 /* mapItem.swift */,
+				AB125271228547C5002463F5 /* Trip+CoreDataClass.swift */,
+				AB125272228547C5002463F5 /* Trip+CoreDataProperties.swift */,
+				ABB1276822853F6D00FC9E07 /* TripItem.xcdatamodeld */,
+				AB12527522854852002463F5 /* CoreDataStack.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
 		ABAFD69A2281F119005C4E7A = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +137,7 @@
 				ABAFD6D62281FA58005C4E7A /* CreateTrip.swift */,
 				AB2CBF2A2282989400FDB64A /* TripVC.swift */,
 				AB2CBF2C22829D3600FDB64A /* WaypointVC.swift */,
+				AB12526C22854675002463F5 /* models */,
 				ABB127642284A3D600FC9E07 /* Notes */,
 				ABAFD6BA2281F11B005C4E7A /* TripPlannerTests */,
 				ABAFD6AA2281F119005C4E7A /* Main.storyboard */,
@@ -275,11 +298,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB125274228547C5002463F5 /* Trip+CoreDataProperties.swift in Sources */,
 				ABAFD6A92281F119005C4E7A /* ViewController.swift in Sources */,
 				ABAFD6D52281F179005C4E7A /* TripCell.swift in Sources */,
+				AB12527622854852002463F5 /* CoreDataStack.swift in Sources */,
+				ABB1276A22853F6D00FC9E07 /* TripItem.xcdatamodeld in Sources */,
 				AB2CBF292282985C00FDB64A /* WayPointCell.swift in Sources */,
+				AB125273228547C5002463F5 /* Trip+CoreDataClass.swift in Sources */,
 				AB2CBF2B2282989400FDB64A /* TripVC.swift in Sources */,
 				AB2CBF2D22829D3600FDB64A /* WaypointVC.swift in Sources */,
+				ABB1276722853CC000FC9E07 /* mapItem.swift in Sources */,
 				ABAFD6D72281FA58005C4E7A /* CreateTrip.swift in Sources */,
 				ABAFD6A72281F119005C4E7A /* AppDelegate.swift in Sources */,
 			);
@@ -610,6 +638,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		ABB1276822853F6D00FC9E07 /* TripItem.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				ABB1276922853F6D00FC9E07 /* TripItem.xcdatamodel */,
+			);
+			currentVersion = ABB1276922853F6D00FC9E07 /* TripItem.xcdatamodel */;
+			path = TripItem.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = ABAFD69B2281F119005C4E7A /* Project object */;
 }

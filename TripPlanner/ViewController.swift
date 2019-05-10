@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     var tableView = UITableView()
+    var store = CoreDataStack()
+    var trips: [Trip]!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,11 +21,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
         tableView.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
         tableView.separatorStyle = .none
-        self.view.addSubview(tableView)
-        createHeader()
-        tableView.reloadData()
+        
+        //tableView.reloadData()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        fetchTrips()
+    }
     func createHeader()
     {
         let hview = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 35))
@@ -50,15 +53,47 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         print("add trip pressed")
         self.present(CreateTrip(), animated: true, completion: nil)
     }
+    func fetchTrips()
+    {
+        self.store.fetchPersistedData {
+            
+            (fetchItemsResult) in
+            
+            switch fetchItemsResult {
+            case let .success(items):
+                self.trips = items
+            case .failure(_):
+                self.trips.removeAll()
+            }
+            // reload the collection view's data source to present the current data set to the user
+            self.tableView.reloadData()
+            self.view.addSubview(self.tableView)
+            self.createHeader()
+        }
+    }
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            let item = self.trips[indexPath.row]
+            store.persistentContainer.viewContext.delete(item)
+            store.saveContext()
+            trips.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return trips.count
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.present(TripVC(), animated: true, completion: nil)
+        let vc = TripVC()
+        vc.theTrip = self.trips[indexPath.row]
+        self.present(vc, animated: true, completion: nil)
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = TripCell()
-        cell.nameOfTrip.text = "San Francisco"
+        cell.nameOfTrip.text = trips[indexPath.row].tripname
         return cell
     }
 }

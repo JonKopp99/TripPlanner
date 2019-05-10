@@ -8,9 +8,10 @@
 
 import Foundation
 import UIKit
-
+import CoreData
 class CreateTrip: UIViewController, UITextFieldDelegate{
     var textField = UITextField()
+    var store = CoreDataStack()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -60,6 +61,14 @@ class CreateTrip: UIViewController, UITextFieldDelegate{
     @objc func addTrip()
     {
         print(textField.text!)
+        let viewContext = store.persistentContainer.viewContext
+        let newTrip = NSEntityDescription.insertNewObject(forEntityName: "Trip", into: viewContext) as! Trip
+        
+        newTrip.tripname = textField.text!
+        newTrip.waypoints = []
+        //viewContext.insert(newTrip)
+        store.saveContext()
+        
         self.dismiss(animated: true, completion: nil)
     }
     
