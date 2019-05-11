@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     var tableView = UITableView()
-    var store = CoreDataStack()
+    var store: CoreDataStack!
     var trips: [Trip]!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +51,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @objc func addTrip()
     {
         print("add trip pressed")
-        self.present(CreateTrip(), animated: true, completion: nil)
+        let vc = CreateTrip()
+        vc.store = self.store
+        self.present(vc, animated: true, completion: nil)
     }
     func fetchTrips()
     {
@@ -89,6 +91,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = TripVC()
         vc.theTrip = self.trips[indexPath.row]
+        vc.store = self.store
         self.present(vc, animated: true, completion: nil)
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

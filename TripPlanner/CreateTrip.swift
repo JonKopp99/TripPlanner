@@ -11,7 +11,7 @@ import UIKit
 import CoreData
 class CreateTrip: UIViewController, UITextFieldDelegate{
     var textField = UITextField()
-    var store = CoreDataStack()
+    var store: CoreDataStack!
     override func viewDidLoad() {
         super.viewDidLoad()
         

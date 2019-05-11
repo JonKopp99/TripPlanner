@@ -17,8 +17,8 @@ class WaypointVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     var matchingItems:[MKMapItem] = []
     var wView = UIView()
     var selectedWP = MKMapItem()
-    var theTrip = Trip()
-    var store = CoreDataStack()
+    var theTrip: Trip!
+    var store: CoreDataStack!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

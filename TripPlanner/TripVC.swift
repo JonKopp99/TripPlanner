@@ -10,7 +10,8 @@ import UIKit
 class TripVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     var tableView = UITableView()
-    var theTrip = Trip()
+    var theTrip: Trip!
+    var store: CoreDataStack!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -91,6 +92,7 @@ class TripVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = WaypointVC()
         vc.theTrip = self.theTrip
+        vc.store = self.store
         self.present(vc, animated: true, completion: nil)
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
