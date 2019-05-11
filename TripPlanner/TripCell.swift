@@ -18,9 +18,10 @@ class TripCell: UITableViewCell{
         nameOfTrip.frame = CGRect(x: 15, y: 10, width: frame.width - 30, height: 50)
         nameOfTrip.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         
-        nameOfTrip.font = UIFont(name: "AvenirNext-BoldItalic", size: 25)
-        
-        self.addSubview(nameOfTrip)
+        nameOfTrip.font = UIFont(name: "AvenirNext-DemiBoldItalic", size: 25)
+        nameOfTrip.textAlignment = .left
+        contentView.addSubview(nameOfTrip)
+        //self.addSubview(nameOfTrip)
     }
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

@@ -24,7 +24,7 @@ class TripVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         label.font = UIFont(name: "AvenirNext-HeavyItalic", size: 25)
         label.text = theTrip.tripname
         label.textAlignment = .center
-        
+        label.adjustsFontSizeToFitWidth = true
         
         let b = UIButton(frame: CGRect(x: 0, y: 30, width: 70, height: 35))
         b.setTitle("Back", for: .normal)
@@ -44,6 +44,10 @@ class TripVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         createHeader()
         tableView.reloadData()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        createHeader()
+        tableView.reloadData()
+    }
     @objc func backPressed()
     {
         self.dismiss(animated: true, completion: nil)
@@ -52,11 +56,13 @@ class TripVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     {
         let hview = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height * 0.4))
         let label = UILabel()
-        label.frame = CGRect(x: 20, y: self.view.bounds.height * 0.2, width: self.view.bounds.width - 40, height: 35)
-        label.textColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
-        label.font = UIFont(name: "AvenirNext-HeavyItalic", size: 25)
+        label.frame = CGRect(x: 20, y: self.view.bounds.height * 0.2, width: self.view.bounds.width - 40, height: 60)
+        label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        label.font = UIFont(name: "AvenirNext-HeavyItalic", size: 20)
         label.text = theTrip.tripname
         label.textAlignment = .center
+        label.numberOfLines = 2
+        //label.adjustsFontSizeToFitWidth = true
         let b = UIButton(frame: CGRect(x: 10, y: label.frame.maxY + 20, width: self.view.bounds.width - 20, height: 35))
         b.setTitleColor(.blue, for: .normal)
         b.setTitle("Add more waypoints?", for: .normal)
@@ -65,7 +71,7 @@ class TripVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         {
             if(wps.count < 1)
             {
-                label.text = "You haven't added any waypoints to your trip."
+                label.text = "You haven't added any\nwaypoints to your trip."
                 b.setTitle("Get Started", for: .normal)
             }
         }
@@ -79,8 +85,10 @@ class TripVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     }
     @objc func addWP()
     {
-        print("add trip pressed")
-        self.present(WaypointVC(), animated: true, completion: nil)
+        let vc = WaypointVC()
+        vc.theTrip = self.theTrip
+        vc.store = self.store
+        self.present(vc, animated: true, completion: nil)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let wps = theTrip.waypoints
@@ -88,6 +96,19 @@ class TripVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
             return wps.count
         }
         return 0
+    }
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            theTrip.removeWP(index: indexPath.row)
+            store.saveContext()
+            ///theTrip.waypoints?.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            createHeader()
+            tableView.reloadData()
+        }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = WaypointVC()

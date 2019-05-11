@@ -16,4 +16,8 @@ public class Trip: NSManagedObject {
     {
         waypoints?.append(mapItem)
     }
+    func removeWP(index: Int)
+    {
+        waypoints?.remove(at: index)
+    }
 }
