@@ -64,6 +64,18 @@ class WaypointVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         mapView.frame = CGRect(x: 0, y: tableView.frame.maxY, width: self.view.bounds.width, height: self.view.bounds.height - tableView.frame.maxY)
         mapView.delegate = self
         centerMap(location: CLLocation(latitude: 37.7862002, longitude: -122.408004))
+        let userDefaults = Foundation.UserDefaults.standard
+        if let xT = userDefaults.string(forKey: "xLoc")
+        {
+            if let yT = userDefaults.string(forKey: "yLoc")
+            {
+                if(!xT.isEmpty && !yT.isEmpty)
+                {
+                    centerMap(location: CLLocation(latitude: CLLocationDegrees(xT)!, longitude: CLLocationDegrees(yT)!))
+                }
+            }
+        }
+        
         self.view.addSubview(mapView)
     }
     

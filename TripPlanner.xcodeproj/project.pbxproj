@@ -10,6 +10,7 @@
 		AB125273228547C5002463F5 /* Trip+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB125271228547C5002463F5 /* Trip+CoreDataClass.swift */; };
 		AB125274228547C5002463F5 /* Trip+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB125272228547C5002463F5 /* Trip+CoreDataProperties.swift */; };
 		AB12527622854852002463F5 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12527522854852002463F5 /* CoreDataStack.swift */; };
+		AB12527822875D50002463F5 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12527722875D50002463F5 /* SettingsVC.swift */; };
 		AB2CBF292282985C00FDB64A /* WayPointCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2CBF282282985C00FDB64A /* WayPointCell.swift */; };
 		AB2CBF2B2282989400FDB64A /* TripVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2CBF2A2282989400FDB64A /* TripVC.swift */; };
 		AB2CBF2D22829D3600FDB64A /* WaypointVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2CBF2C22829D3600FDB64A /* WaypointVC.swift */; };
@@ -48,6 +49,7 @@
 		AB125271228547C5002463F5 /* Trip+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trip+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AB125272228547C5002463F5 /* Trip+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trip+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AB12527522854852002463F5 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		AB12527722875D50002463F5 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		AB2CBF282282985C00FDB64A /* WayPointCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WayPointCell.swift; sourceTree = "<group>"; };
 		AB2CBF2A2282989400FDB64A /* TripVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripVC.swift; sourceTree = "<group>"; };
 		AB2CBF2C22829D3600FDB64A /* WaypointVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaypointVC.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				ABAFD6D42281F179005C4E7A /* TripCell.swift */,
 				AB2CBF282282985C00FDB64A /* WayPointCell.swift */,
 				ABAFD6A62281F119005C4E7A /* AppDelegate.swift */,
+				AB12527722875D50002463F5 /* SettingsVC.swift */,
 				ABAFD6A82281F119005C4E7A /* ViewController.swift */,
 				ABAFD6D62281FA58005C4E7A /* CreateTrip.swift */,
 				AB2CBF2A2282989400FDB64A /* TripVC.swift */,
@@ -298,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB12527822875D50002463F5 /* SettingsVC.swift in Sources */,
 				AB125274228547C5002463F5 /* Trip+CoreDataProperties.swift in Sources */,
 				ABAFD6A92281F119005C4E7A /* ViewController.swift in Sources */,
 				ABAFD6D52281F179005C4E7A /* TripCell.swift in Sources */,

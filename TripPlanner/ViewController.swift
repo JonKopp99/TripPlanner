@@ -39,14 +39,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let b = UIButton(frame: CGRect(x: self.view.bounds.width - 40, y: 0, width: 35, height: 35))
         b.setImage(#imageLiteral(resourceName: "icons8-plus-64"), for: .normal)
         b.addTarget(self, action: #selector(addTrip), for: .touchUpInside)
-        
+        let b2 = UIButton(frame: CGRect(x: 5, y: 0, width: 35, height: 35))
+        b2.setImage(#imageLiteral(resourceName: "icons8-settings-64"), for: .normal)
+        b2.addTarget(self, action: #selector(settings), for: .touchUpInside)
         hview.addSubview(label)
         hview.addSubview(b)
+        hview.addSubview(b2)
         //hview.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1).withAlphaComponent(0.8)
         tableView.tableHeaderView = hview
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return self.view.bounds.height * 0.1
+    }
+    @objc func settings()
+    {
+        print("Settings pressed")
+        self.present(SettingsVC(), animated: true, completion: nil)
     }
     @objc func addTrip()
     {
