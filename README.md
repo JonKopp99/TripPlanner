@@ -1,5 +1,7 @@
 # Trip Planner
 
+# For Makeschools MOB2.1
+
 <!-- Found this project from previous curriculum, I think it can work for this course -->
 
 ## Project Outline
